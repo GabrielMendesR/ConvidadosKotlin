@@ -1,4 +1,4 @@
-package com.caderno.convidados.ui
+package com.caderno.convidados.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

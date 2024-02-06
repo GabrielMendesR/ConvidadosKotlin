@@ -1,4 +1,4 @@
-package com.caderno.convidados.ui
+package com.caderno.convidados.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.caderno.convidados.databinding.FragmentPresentBinding
+import com.caderno.convidados.databinding.FragmentAllGuestsBinding
+import com.caderno.convidados.viewModel.AllGuestsViewModel
 
-class PresentFragment : Fragment() {
+class AllGuestsFragment : Fragment() {
 
-    private var _binding: FragmentPresentBinding? = null
+    private var _binding: FragmentAllGuestsBinding? = null
 
     private val binding get() = _binding!!
 
@@ -21,12 +22,12 @@ class PresentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val viewModel =
-            ViewModelProvider(this).get(PresentViewModel::class.java)
+            ViewModelProvider(this).get(AllGuestsViewModel::class.java)
 
-        _binding = FragmentPresentBinding.inflate(inflater, container, false)
+        _binding = FragmentAllGuestsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textAbsent
+        val textView: TextView = binding.textAllGuests
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

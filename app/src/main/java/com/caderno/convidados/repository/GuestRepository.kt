@@ -39,7 +39,11 @@ class GuestRepository private constructor(context: Context) {
         }
     }
 
-    fun update() {
+    fun update(guest: GuestModel) {
+
+        val db = guestDataBase.writableDatabase
+
+        db.update(DataBaseConstants.GUEST.TABLE_NAME, values)
 
     }
 }
